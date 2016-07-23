@@ -1,0 +1,20 @@
+.container
+  .row
+    .col.s12.m10.l10
+      .main
+        h1 Списоaк статей
+        | <%= link_to 'Новая статья', new_article_path %
+        br/
+        | <% @articles.each do |article| %
+        .article-list
+          .article-list__title
+            strong <%= article.title %
+          .article-list__text
+            | <%= article.text %
+          .article-list__buttons
+            | <%= link_to 'Показать', article_path(article) %
+            | <%= link_to 'Редактировать', edit_article_path(article) %
+            | <%= link_to 'Удалить', article_path(article),
+            | method: :delete,
+            | data: { confirm: 'Уверен?' } %
+        | <% end %
