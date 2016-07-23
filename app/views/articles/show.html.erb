@@ -7,4 +7,5 @@
   <strong>Текст:</strong>
   <%= @article.text %>
 </p>
+<%= link_to 'Редактировать', edit_article_path(@article) %> |
 <%= link_to 'Назад', articles_path %>
