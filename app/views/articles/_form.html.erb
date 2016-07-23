@@ -1,3 +1,4 @@
+<div class="well">
 <%= form_for @article do |f| %>
  
   <% if @article.errors.any? %>
@@ -14,18 +15,20 @@
     </div>
   <% end %>
  
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="input-group">
+    <label class="input-group__label"><%= f.label :title %></label>
+    <div class="input-group__input l"><%= f.text_field :title %></div>
+  </div>
+  <div class="input-group">
+    <label class="input-group__label"><%= f.label :text %></label>
+    <div class="input-group__input l"><%= f.text_area :text %></div>
+  </div>
  
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="input-group">
+    <!-- padding-left -->
+    <div class="input-group__label">&nbsp;</div>
+    <%= f.submit "Сохранить", :class => 'btn-green btn-l btn-block' %>
+  </div>
  
 <% end %>
+</div>

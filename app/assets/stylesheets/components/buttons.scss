@@ -1,0 +1,73 @@
+$white: #fff;
+// Основные свойства кнопки
+@mixin btn-theme($color, $background-color) {
+  color: $color;
+  background-color: $background-color;
+
+  &:focus,
+  &:hover { 
+    outline: 0; 
+    background: darken($background-color, 10%); 
+  }
+
+  &:active { 
+    background: lighten($background-color, 10%); 
+  }
+}
+
+// base button
+.btn {
+  cursor: pointer;
+  border: 1px solid transparent;
+  // undo border
+  margin: -1px;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  // Варианты расцветок
+
+  &-green {
+    @extend .btn;
+    @include btn-theme($white, $green);
+  }
+
+  &-blue {
+    @extend .btn;
+    @include btn-theme($white, $blue);
+  }
+
+  &-white {
+    @extend .btn;
+    color: $blue;
+    background-color: $white;
+    border: 1px solid $blue;
+    &:hover { 
+      color: $white; 
+      background: $blue; 
+    }
+    &:active { 
+      background: lighten($blue, 10%); 
+    }
+  }
+
+  &-block {
+    @extend .btn;
+    display: block;
+    width: 100%;
+    @media #{$medium-and-up} {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+// Размеры
+@each $b-size, $f-size in (l, 1.2em),
+                          (s, 0.8em), {
+  .btn-#{$b-size} {
+    font-size: $f-size;
+  }
+}

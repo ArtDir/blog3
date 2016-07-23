@@ -1,0 +1,87 @@
+.input-group {
+
+  @include clearfix();
+  position: relative;
+  margin-bottom: 1.5em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$medium-and-up} {
+    display: table;
+  }
+
+  &__label {
+    display: block;
+    box-sizing: border-box;
+    line-height: 1;
+    padding-bottom: 0.5em;
+
+    @media #{$medium-and-up} {
+      vertical-align: top;
+      padding-bottom: 0;
+      display: table-cell;
+      width: 10em;
+    }
+  }
+
+  &__input {
+    display: block;
+    @media #{$medium-and-up} {
+      display: table-cell;
+      vertical-align: middle;
+      &.s {
+        width: 10em;
+      }
+      &.m {
+        width: 15em;
+      }
+      &.l {
+        width: 30em;
+      }
+      &.all {
+        width: 100%;
+        input {
+          border-radius: 3px 0 0 3px;
+        }
+      }
+
+      & + .input-group__input {
+        .btn {
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+
+    & select,
+    & textarea,
+    & input {
+      width: 100%;
+      color: $not-black;
+      background-color: white;
+      border: 1px solid $grey-line;
+      box-sizing: border-box;
+      border-radius: 3px;
+      padding: 0.5em 0.5em;
+    }
+    & textarea {
+      resize: vertical;
+      min-height: 7em;
+    }
+  }
+
+  &__hint {
+    color: $grey-line;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 0.5em;
+
+    @media #{$medium-and-up} {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 1em;
+      padding-top: 0;
+    }
+  }
+
+}

@@ -1,0 +1,12 @@
+.well {
+  margin-top: 30px;
+  line-height: 0.8;
+  background-color: $yellow-well;
+  border-radius: 5px;
+  padding: {
+    top: 30px;
+    bottom: 30px;
+    left: 25px;
+    right: 25px;
+  }
+}

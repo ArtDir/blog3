@@ -1,11 +1,23 @@
-<p>
-  <strong>Заголовок:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Текст:</strong>
-  <%= @article.text %>
-</p>
-<%= link_to 'Редактировать', edit_article_path(@article) %> |
-<%= link_to 'Назад', articles_path %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m10 l10">
+      
+      <div class="main">
+        
+        <p>
+          <strong>Заголовок:</strong>
+          <%= @article.title %>
+        </p>
+         
+        <p>
+          <strong>Текст:</strong>
+          <%= @article.text %>
+        </p>
+        <%= link_to 'Редактировать', edit_article_path(@article) %> |
+        <%= link_to 'Назад', articles_path %>
+
+      </div>
+      
+    </div>
+  </div>
+</div>

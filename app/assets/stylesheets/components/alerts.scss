@@ -1,0 +1,27 @@
+@mixin alert-theme($al-color) {
+  color: lighten($al-color, 5%);
+  background: lighten($al-color, 35%);
+  padding: 1em;
+  border: 1px solid lighten($al-color, 30%);
+  border-radius: 5px;
+}
+
+.alert {
+  @extend .container;
+  margin-top: 2em;
+}
+
+.alert-danger { 
+  @include alert-theme($red); 
+}
+.alert-warning { 
+  @include alert-theme($yellow); 
+}
+.alert-success { 
+  @include alert-theme($green); 
+}
+.alert-info {
+  @extend .alert;
+  color: #8bbcca;
+  background: #e6f0fb;
+}

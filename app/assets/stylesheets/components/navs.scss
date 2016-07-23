@@ -1,0 +1,45 @@
+ul.navtabs {
+  margin-bottom: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+ul.navtabs li {
+  font-size: 0.88em;
+  margin-right: -5px;
+  padding: 7px 25px;
+  display: inline; /* Отображать как строчный элемент */
+  color: $grey-line;
+  border: 1px solid $grey-line;
+  &:hover { background-color: $grey-background; color: $not-black; }
+  &:first-child { border-radius: 3px 0 0 3px; }
+  &:last-child { border-radius: 0 3px 3px 0; }
+}
+ul.navtabs li.active {
+  background-color: $grey-background;
+  color: $not-black;
+  border: 1px solid $grey-line;
+}
+
+// Такие же листалки страниц
+ul.pagtabs {
+  margin-bottom: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+ul.pagtabs li {
+  font-size: 0.88em;
+  margin-right: -5px;
+  padding: 7px 15px;
+  display: inline; /* Отображать как строчный элемент */
+  color: $grey-line;
+  border: 1px solid $grey-line;
+  &:hover { background-color: $grey-background; color: $not-black; }
+  &:first-child { border-radius: 3px 0 0 3px; }
+  &:last-child { border-radius: 0 3px 3px 0; }
+}
+ul.pagtabs li.active {
+  padding: 7px 15px;
+  background-color: $grey-background;
+  color: $not-black;
+  border: 1px solid $grey-line;
+}

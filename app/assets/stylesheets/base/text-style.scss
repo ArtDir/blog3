@@ -1,0 +1,35 @@
+body {
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.main {
+  margin-top: 15em;
+}
+
+@mixin headings($f-size, $f-weight, $f-margin) {
+  font-family: 'Open Sans', sans-serif;
+  font-size: $f-size;
+  font-weight: $f-weight;
+  margin: 0 0 $f-margin 0;
+}
+
+// Заголовки
+h1 { @include headings(3em, 800, 0.8em); }
+h2 { @include headings(2em, 800, 0.6em); }
+h3 { @include headings(1.5em, 400, 0.3em); }
+h4 { @include headings(1.2em, 300, 0.2em); }
+
+// Основной текст
+p {
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+// Ссылки
+a {
+  color: $link-color;
+  &:hover { color: $link-color-hover; }
+}

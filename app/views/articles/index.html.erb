@@ -1,21 +1,33 @@
-<h1>Список статей</h1>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m10 l10">
+      <div class="main">
 
-<%= link_to 'Новая статья', new_article_path %>
-<table>
-  <tr>
-    <th>Заголовок</th>
-    <th>Текст</th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Показать', article_path(article) %></td>
-      <td><%= link_to 'Редактировать', edit_article_path(article) %></td>
-      <td><%= link_to 'Удалить', article_path(article),
-              method: :delete,
-              data: { confirm: 'Уверен?' } %></td>
-    </tr>
-  <% end %>
-</table>
+          <h1>Список статей</h1>
+
+          <%= link_to 'Новая статья', new_article_path %>
+          <br>
+          
+            <% @articles.each do |article| %>
+              <div class="article-list">
+                <div class="article-list__title">
+                  <strong><%= article.title %></strong>
+                </div>
+                <div class="article-list__text">
+                  <%= article.text %>
+                </div>
+                <div class="article-list__buttons">
+                  <%= link_to 'Показать', article_path(article) %> 
+                  <%= link_to 'Редактировать', edit_article_path(article) %> 
+                  <%= link_to 'Удалить', article_path(article),
+                            method: :delete,
+                            data: { confirm: 'Уверен?' } %>
+                </div>
+              </div>
+            <% end %>
+          
+
+      </div>
+    </div>
+  </div>
+</div>

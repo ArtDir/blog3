@@ -1,0 +1,116 @@
+@mixin wbs {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box; 
+}
+@mixin wbt {
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease; 
+   transition: all 0.5s ease; 
+}
+
+.dropcontainer {
+   position:relative;
+   font-size: 16px;
+   color: $grey-text;
+   position: absolute;
+} 
+ 
+.trigger {
+   border-radius: 3px;
+   color: $grey-text;
+   padding: 5px 20px;
+   font-size: 16px;
+   width: 250px;
+   background: white url(../scss/components/select/arrow-down.png) 95% center no-repeat;
+   background-size: 10px 10px;
+   display: block;
+   border: 1px solid $grey-line;
+   @include wbs;
+   @include wbt;
+}
+ 
+.trigger:hover {
+   color: $grey-text;
+   background: $grey-background url(../scss/components/select/arrow-down.png) 95% center no-repeat;
+   background-size: 10px 10px;
+}
+ 
+.activetrigger {
+   color: $grey-text;
+   padding: 5px 20px;
+   font-size: 16px;
+   width: 250px;
+   background: $grey-background url(../scss/components/select/arrow-down.png) 95% center no-repeat;
+   background-size: 10px 10px;
+   display: block;
+   border: 1px solid $grey-line;
+   border-radius: 3px 3px 0 0;
+   @include wbs;
+}
+ 
+.activetrigger:hover {
+   background: $grey-background url(../scss/components/select/arrow-down.png) 95% center no-repeat;
+   background-size: 10px 10px;
+   color: $grey-text;
+}
+ 
+.activetrigger:active {
+   background: $grey-background url(../scss/components/select/arrow-down.png) 95% center no-repeat;
+   background-size: 10px 10px;
+   color: $grey-text;
+}
+ 
+.dropcontainer ul {
+   font-size: 16px;
+   border: 1px solid $grey-line;
+   border-top: none;
+   background: white;
+   list-style-type: none;
+   padding: 0px;
+   margin: 0;
+   width: 250px;
+   z-index: 100;
+   @include wbs;
+}
+ 
+.dropcontainer ul li {
+   padding: 5px 20px;
+   @include wbt;
+}
+ 
+.dropcontainer ul li:hover {
+   background: $grey-background;
+   outline: none;
+   padding: 5px 20px;
+}
+
+.dropcontainer ul li:first-child {
+   display: none;
+}
+ 
+.dropcontainer ul li:last-child {
+   border-bottom: none;
+}
+ 
+.dropdownhidden {
+   display: none;
+}
+ 
+.dropdownvisible {
+    // height: 200px;
+    // overflow-y: scroll;
+}
+a.activetrigger, a.trigger {
+   line-height: 1.8em;
+   margin-bottom: 0;
+   color: $grey-text;
+   text-decoration: none;
+   font-size: 14px;
+}
+.dropcontainer a {
+   color: $grey-tooltip;
+   text-decoration: none;
+   font-size: 14px;
+}
